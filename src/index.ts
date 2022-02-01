@@ -21,11 +21,13 @@ const plugin: JupyterFrontEndPlugin<void> = {
     }
     tracker.widgetAdded.connect((_, widget) => {
       const { console } = widget;
-      console.promptCellCreated.connect(() => {
+      const populate = () => {
         if (console.promptCell) {
           console.promptCell.model.value.text = code.join('\n');
+          console.promptCellCreated.disconnect(populate);
         }
-      });
+      };
+      console.promptCellCreated.connect(populate);
     });
   }
 };
