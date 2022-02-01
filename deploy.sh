@@ -24,6 +24,3 @@ python -m pip install -r requirements-deploy.txt
 # build the JupyterLite site
 jupyter lite --version
 jupyter lite build
-
-chmod +x copy.sh
-./copy.sh
