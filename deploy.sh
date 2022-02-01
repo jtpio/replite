@@ -6,8 +6,8 @@ set -xeu
 # bootstrap the environment
 yum install tar wget || true
 
-cd $HOME
 export MAMBA_VERSION=0.20.0
+export ZSH_VERSION=""
 URL="https://anaconda.org/conda-forge/micromamba/${MAMBA_VERSION}/download/linux-64/micromamba-${MAMBA_VERSION}-0.tar.bz2"
 wget -qO- ${URL} | tar -xvj bin/micromamba
 
@@ -25,5 +25,5 @@ python -m pip install -r requirements-deploy.txt
 jupyter lite --version
 jupyter lite build
 
-# copy the favicon
-cp ./favicon.ico ./_output/lab/favicon.ico
+chmod +x copy.sh
+./copy.sh
