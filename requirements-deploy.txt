@@ -3,3 +3,6 @@ jupyterlite==0.1.0a20
 jupyterlab-fasta>=3,<4
 jupyterlab-geojson>=3,<4
 plotly>=5,<6
+
+# deploy the custom extension
+.
