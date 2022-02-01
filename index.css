@@ -1,0 +1,13 @@
+#top-panel-wrapper, #menu-panel-wrapper, #spacer-widget {
+	display: none!important;
+}
+
+#main-panel {
+  top: 0px!important;
+  height: 100%!important;
+	max-width: unset!important;
+}
+
+.jp-InputPrompt {
+  flex: 0 0 32px!important;
+}
