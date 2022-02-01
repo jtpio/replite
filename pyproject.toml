@@ -14,4 +14,4 @@ build_cmd = "build:prod"
 npm = ["jlpm"]
 
 [tool.check-manifest]
-ignore = ["replite/labextension/**", "yarn.lock", ".*", "package-lock.json"]
+ignore = ["replite/labextension/**", "yarn.lock", ".*", "package-lock.json", "deploy.sh", "requirements-deploy.txt"]
