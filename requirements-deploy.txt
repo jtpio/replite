@@ -1,5 +1,2 @@
 jupyterlab~=3.2.8
 jupyterlite==0.1.0a20
-
-# install the extra extensions
-.
