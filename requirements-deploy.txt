@@ -1,2 +1,5 @@
 jupyterlab~=3.2.8
 jupyterlite==0.1.0a20
+jupyterlab-fasta>=3,<4
+jupyterlab-geojson>=3,<4
+plotly>=5,<6
