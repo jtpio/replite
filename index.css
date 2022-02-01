@@ -8,6 +8,6 @@
 	max-width: unset!important;
 }
 
-.jp-InputPrompt {
+.jp-InputPrompt, .jp-OutputPrompt {
   flex: 0 0 32px!important;
 }
