@@ -9,8 +9,46 @@ An embeddable REPL, powered by JupyterLite.
 To embed the code console in your website:
 
 ```html
-<iframe src="https://replite.vercel.app/retro/consoles/index.html" width="100%" height="100%"></iframe>
+<iframe src="https://replite.vercel.app/retro/consoles/index.html" width="100%" height="100%">
+</iframe>
 ```
+
+## Configuration
+
+The behavior and the look of the REPL can be configured via URL parameters.
+
+### Select a kernel by default
+
+To avoid the kernel selection dialog and choose a given kernel by default:
+
+```html
+<iframe src="https://replite.vercel.app/retro/consoles?kernel=python" width="100%" height="100%">
+</iframe>
+```
+
+### Enable the toolbar
+
+The toolbar can be enabled (opt-in) to add a couple of useful buttons:
+
+```html
+<iframe src="https://replite.vercel.app/retro/consoles?toolbar=1" width="100%" height="100%">
+</iframe>
+```
+
+![toolbar](https://user-images.githubusercontent.com/591645/152152632-af6b7020-1dc4-450b-b9c8-1d320e6fd5a5.png)
+
+### Populate code
+
+Custom starter code can automatically be added to the prompt cell:
+
+```html
+<iframe src="https://replite.vercel.app/retro/consoles?code=import numpy as np" width="100%" height="100%">
+</iframe>
+```
+
+## Create your custom deployment
+
+TBD
 
 ## Development
 
