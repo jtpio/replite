@@ -129,20 +129,8 @@ const parameters: JupyterFrontEndPlugin<void> = {
     const kernel = urlParams.get('kernel');
     const toolbar = urlParams.get('toolbar');
 
-    tracker.widgetAdded.connect((_, widget) => {
+    tracker.widgetAdded.connect(async (_, widget) => {
       const { console } = widget;
-
-      const populate = () => {
-        if (console.promptCell) {
-          // pre-populate code when the console is created
-          if (code) {
-            console.promptCell.model.value.text = code.join('\n');
-          }
-
-          console.promptCellCreated.disconnect(populate);
-        }
-      };
-      console.promptCellCreated.connect(populate);
 
       // hide the first select kernel dialog if a kernel is specified
       // TODO: support specifying kernel preference in upstream RetroLab
@@ -153,7 +141,12 @@ const parameters: JupyterFrontEndPlugin<void> = {
         };
         Dialog.tracker.widgetAdded.connect(hideFirstDialog);
 
-        void console.sessionContext.changeKernel({ name: kernel });
+        await console.sessionContext.changeKernel({ name: kernel });
+      }
+
+      if (code) {
+        await console.sessionContext.ready;
+        code.forEach(line => console.inject(line));
       }
 
       if (!toolbar) {
