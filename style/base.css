@@ -1,0 +1,23 @@
+#top-panel-wrapper, #menu-panel-wrapper, #spacer-widget {
+	display: none!important;
+}
+
+#main-panel {
+  top: 0px!important;
+  height: 100%!important;
+	max-width: unset!important;
+}
+
+.jp-CodeConsole-promptCell .jp-InputPrompt {
+  margin-right: 10px;
+}
+
+.jp-PoweredBy {
+  background: var(--jp-layout-color0);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: var(--jp-ui-font-size0);
+  padding: 0 var(--jp-console-padding) 0 0;
+}
