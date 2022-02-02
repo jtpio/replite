@@ -38,6 +38,7 @@ const buttons: JupyterFrontEndPlugin<void> = {
     // wrapper commands to be able to override the icon
     const runCommand = 'replite:run';
     commands.addCommand(runCommand, {
+      caption: trans.__('Run'),
       icon: runIcon,
       execute: () => {
         return commands.execute('console:run-forced');
@@ -51,6 +52,7 @@ const buttons: JupyterFrontEndPlugin<void> = {
 
     const restartCommand = 'replite:restart';
     commands.addCommand(restartCommand, {
+      caption: trans.__('Restart'),
       icon: refreshIcon,
       execute: () => {
         return commands.execute('console:restart-kernel');
@@ -64,6 +66,7 @@ const buttons: JupyterFrontEndPlugin<void> = {
 
     const clearCommand = 'replite:clear';
     commands.addCommand(clearCommand, {
+      caption: trans.__('Clear'),
       icon: clearIcon,
       execute: () => {
         return commands.execute('console:clear');
@@ -124,6 +127,7 @@ const parameters: JupyterFrontEndPlugin<void> = {
     const urlParams = new URLSearchParams(search);
     const code = urlParams.getAll('code');
     const kernel = urlParams.get('kernel');
+    const toolbar = urlParams.get('toolbar');
 
     tracker.widgetAdded.connect((_, widget) => {
       const { console } = widget;
@@ -150,6 +154,11 @@ const parameters: JupyterFrontEndPlugin<void> = {
         Dialog.tracker.widgetAdded.connect(hideFirstDialog);
 
         void console.sessionContext.changeKernel({ name: kernel });
+      }
+
+      if (!toolbar) {
+        // hide the toolbar by default if not specified
+        widget.toolbar.dispose();
       }
     });
   }
