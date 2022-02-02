@@ -19,4 +19,5 @@
   align-items: center;
   justify-content: flex-end;
   font-size: var(--jp-ui-font-size0);
+  padding: 0 var(--jp-console-padding) 0 0;
 }
