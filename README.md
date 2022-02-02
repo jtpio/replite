@@ -37,14 +37,16 @@ The toolbar can be enabled (opt-in) to add a couple of useful buttons:
 
 ![toolbar](https://user-images.githubusercontent.com/591645/152152632-af6b7020-1dc4-450b-b9c8-1d320e6fd5a5.png)
 
-### Populate code
+### Auto execute code on startup
 
-Custom starter code can automatically be added to the prompt cell:
+Custom starter code can automatically be executed on startup:
 
 ```html
-<iframe src="https://replite.vercel.app/retro/consoles?code=import numpy as np" width="100%" height="100%">
+<iframe src="https://replite.vercel.app/retro/consoles?kernel=python&code=import numpy as np" width="100%" height="100%">
 </iframe>
 ```
+
+https://user-images.githubusercontent.com/591645/152204519-7980e9f6-ef56-4263-bb79-4fcf3e4fd2be.mp4
 
 ## Create your custom deployment
 
