@@ -11,3 +11,7 @@
 .jp-InputPrompt, .jp-OutputPrompt {
   flex: 0 0 32px!important;
 }
+
+.jp-CodeConsole-promptCell .jp-InputPrompt {
+  margin-right: 10px;
+}
