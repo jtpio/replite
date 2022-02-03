@@ -21,6 +21,16 @@ micromamba install python=3.10 -c conda-forge -y
 # install dependencies
 python -m pip install -r requirements-deploy.txt
 
+# populate placeholder content to avoid 404s errors in the dev tools console when fetching all.json
+mkdir contents
+cp README.md contents
+
+export LITE_OUTPUT_DIR=_output
 # build the JupyterLite site
 jupyter lite --version
-jupyter lite build
+jupyter lite build --contents contents --output-dir ${LITE_OUTPUT_DIR}
+
+# copy custom files to avoid 404s
+cp favicon.ico ${LITE_OUTPUT_DIR}
+cp jupyter-lite.ipynb ${LITE_OUTPUT_DIR}/retro
+cp jupyter-lite.ipynb ${LITE_OUTPUT_DIR}/retro/consoles

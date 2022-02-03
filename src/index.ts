@@ -135,9 +135,9 @@ const parameters: JupyterFrontEndPlugin<void> = {
       // hide the first select kernel dialog if a kernel is specified
       // TODO: support specifying kernel preference in upstream RetroLab
       if (kernel) {
-        const hideFirstDialog = async (_: unknown, w: Dialog<unknown>) => {
+        const hideFirstDialog = (_: unknown, w: Dialog<unknown>) => {
           Dialog.tracker.widgetAdded.disconnect(hideFirstDialog);
-          requestAnimationFrame(() => w.dispose());
+          requestAnimationFrame(() => w.resolve(0));
         };
         Dialog.tracker.widgetAdded.connect(hideFirstDialog);
 

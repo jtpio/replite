@@ -23,10 +23,6 @@
   color: var(--jp-ui-font-color0);
 }
 
-.jp-InputPrompt {
-  flex: 0 0 42px;
-}
-
 .jp-CodeConsole-input .jp-InputCollapser {
   display: none;
 }
