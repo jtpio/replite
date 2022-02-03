@@ -8,6 +8,7 @@
       "@jupyter-widgets/jupyterlab-manager",
       "@jupyterlite/javascript-kernel-extension",
       "jupyterlab-plotly"
-    ]
+    ],
+    "faviconUrl": "./lab/favicon.ico"
   }
 }
