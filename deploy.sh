@@ -27,4 +27,7 @@ cp README.md contents
 
 # build the JupyterLite site
 jupyter lite --version
-jupyter lite build --contents contents
+jupyter lite build --contents contents --output-dir _output
+
+# copy the favicon.ico to the top-level
+cp favicon.ico _output/
