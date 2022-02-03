@@ -1,11 +1,13 @@
-#top-panel-wrapper, #menu-panel-wrapper, #spacer-widget {
-	display: none!important;
+#top-panel-wrapper,
+#menu-panel-wrapper,
+#spacer-widget {
+  display: none !important;
 }
 
 #main-panel {
-  top: 0px!important;
-  height: 100%!important;
-	max-width: unset!important;
+  top: 0px !important;
+  height: 100% !important;
+  max-width: unset !important;
 }
 
 .jp-CodeConsole-promptCell .jp-InputPrompt {
@@ -19,4 +21,20 @@
   font-size: var(--jp-ui-font-size0);
   padding: 0 var(--jp-console-padding) 0 0;
   color: var(--jp-ui-font-color0);
+}
+
+.jp-InputPrompt {
+  flex: 0 0 42px;
+}
+
+.jp-CodeConsole-input .jp-InputCollapser {
+  display: none;
+}
+
+.jp-InputArea {
+  flex-direction: row;
+}
+
+.jp-OutputArea-child {
+  flex-direction: row;
 }
