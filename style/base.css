@@ -35,6 +35,11 @@
   flex-direction: row;
 }
 
+.jp-InputArea-editor,
+.jp-OutputArea-child .jp-OutputArea-output {
+  margin-left: unset;
+}
+
 .jp-OutputArea-child {
   flex-direction: row;
 }
