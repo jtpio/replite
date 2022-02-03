@@ -5,6 +5,7 @@
     "appUrl": "./retro",
     "collaborative": true,
     "disabledExtensions": [
+      "@jupyter-widgets/jupyterlab-manager",
       "@jupyterlite/javascript-kernel-extension",
       "jupyterlab-plotly"
     ]
