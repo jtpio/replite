@@ -25,9 +25,11 @@ python -m pip install -r requirements-deploy.txt
 mkdir contents
 cp README.md contents
 
+export LITE_OUTPUT_DIR=_output
 # build the JupyterLite site
 jupyter lite --version
-jupyter lite build --contents contents --output-dir _output
+jupyter lite build --contents contents --output-dir ${LITE_OUTPUT_DIR}
 
-# copy the favicon.ico to the top-level
-cp favicon.ico _output/
+# copy custom files to avoid 404s
+cp favicon.ico ${LITE_OUTPUT_DIR}
+cp jupyter-lite.ipynb ${LITE_OUTPUT_DIR}/retro/consoles
