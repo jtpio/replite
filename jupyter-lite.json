@@ -5,7 +5,9 @@
     "appUrl": "./retro",
     "collaborative": true,
     "disabledExtensions": [
-      "@jupyterlite/javascript-kernel-extension"
+      "@jupyter-widgets/jupyterlab-manager",
+      "@jupyterlite/javascript-kernel-extension",
+      "jupyterlab-plotly"
     ]
   }
 }
