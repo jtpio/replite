@@ -48,6 +48,23 @@ Custom starter code can automatically be executed on startup:
 
 https://user-images.githubusercontent.com/591645/152204519-7980e9f6-ef56-4263-bb79-4fcf3e4fd2be.mp4
 
+### Themes
+
+It is also possible to select a theme, for example `JupyterLab Dark`:
+
+```html
+<iframe src="https://replite.vercel.app/retro/consoles?theme=JupyterLab Dark" width="100%" height="100%">
+</iframe>
+```
+
+Additional themes can be installed with `pip` if they are distributed as a JupyterLab prebuilt extension. For example:
+
+```bash
+pip install jupyterlab-gt-coar-theme
+```
+
+https://user-images.githubusercontent.com/591645/152374795-7b415c03-2f7b-43a1-952e-a4406ccb6c5b.mp4
+
 ## Create your custom deployment
 
 TBD

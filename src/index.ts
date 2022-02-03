@@ -3,7 +3,12 @@ import {
   JupyterFrontEndPlugin
 } from '@jupyterlab/application';
 
-import { CommandToolbarButton, Dialog, Toolbar } from '@jupyterlab/apputils';
+import {
+  CommandToolbarButton,
+  Dialog,
+  IThemeManager,
+  Toolbar
+} from '@jupyterlab/apputils';
 
 import { IConsoleTracker } from '@jupyterlab/console';
 
@@ -118,8 +123,12 @@ const buttons: JupyterFrontEndPlugin<void> = {
 const parameters: JupyterFrontEndPlugin<void> = {
   id: 'replite:parameters',
   autoStart: true,
-  optional: [IConsoleTracker],
-  activate: (app: JupyterFrontEnd, tracker: IConsoleTracker | null) => {
+  optional: [IConsoleTracker, IThemeManager],
+  activate: (
+    app: JupyterFrontEnd,
+    tracker: IConsoleTracker | null,
+    themeManager: IThemeManager | null
+  ) => {
     if (!tracker) {
       return;
     }
@@ -127,7 +136,13 @@ const parameters: JupyterFrontEndPlugin<void> = {
     const urlParams = new URLSearchParams(search);
     const code = urlParams.getAll('code');
     const kernel = urlParams.get('kernel');
+    const theme = urlParams.get('theme')?.trim();
     const toolbar = urlParams.get('toolbar');
+
+    if (theme && themeManager) {
+      const themeName = decodeURIComponent(theme);
+      themeManager.setTheme(themeName);
+    }
 
     tracker.widgetAdded.connect(async (_, widget) => {
       const { console } = widget;
