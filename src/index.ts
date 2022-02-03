@@ -132,6 +132,11 @@ const parameters: JupyterFrontEndPlugin<void> = {
     tracker.widgetAdded.connect(async (_, widget) => {
       const { console } = widget;
 
+      if (!toolbar) {
+        // hide the toolbar by default if not specified
+        widget.toolbar.dispose();
+      }
+
       // hide the first select kernel dialog if a kernel is specified
       // TODO: support specifying kernel preference in upstream RetroLab
       if (kernel) {
@@ -147,11 +152,6 @@ const parameters: JupyterFrontEndPlugin<void> = {
       if (code) {
         await console.sessionContext.ready;
         code.forEach(line => console.inject(line));
-      }
-
-      if (!toolbar) {
-        // hide the toolbar by default if not specified
-        widget.toolbar.dispose();
       }
     });
   }
