@@ -168,7 +168,6 @@ const parameters: JupyterFrontEndPlugin<void> = {
       if (install) {
         await console.sessionContext.ready;
         console.inject('import micropip');
-        install[0].split(',').forEach(pckg => window.console.log(pckg));
         install[0].split(',').forEach(pckg => console.inject(`await micropip.install('${pckg}')`));
         console.clear();
       }
