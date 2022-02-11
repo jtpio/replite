@@ -135,7 +135,7 @@ const parameters: JupyterFrontEndPlugin<void> = {
     const search = window.location.search;
     const urlParams = new URLSearchParams(search);
     const code = urlParams.getAll('code');
-    const install = urlParams.getAll('install');
+    const prerun = urlParams.getAll('prerun');
     const kernel = urlParams.get('kernel');
     const theme = urlParams.get('theme')?.trim();
     const toolbar = urlParams.get('toolbar');
@@ -165,10 +165,9 @@ const parameters: JupyterFrontEndPlugin<void> = {
         await console.sessionContext.changeKernel({ name: kernel });
       }
 
-      if (install[0]) {
+      if (prerun[0]) {
         await console.sessionContext.ready;
-        console.inject('import micropip');
-        install[0].split(',').forEach(pckg => console.inject(`await micropip.install('${pckg}')`));
+        prerun.forEach(line => console.inject(line));
         console.clear();
       }
 
