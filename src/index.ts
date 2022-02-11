@@ -167,8 +167,9 @@ const parameters: JupyterFrontEndPlugin<void> = {
 
       if (prerun[0]) {
         await console.sessionContext.ready;
-        prerun.forEach(line => console.inject(line));
-        console.clear();
+        prerun.forEach(line =>
+          console.sessionContext.session?.kernel?.requestExecute({ code: line,
+          silent: true, store_history: false}));
       }
 
       if (code) {
