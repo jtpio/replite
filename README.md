@@ -39,7 +39,7 @@ The toolbar can be enabled (opt-in) to add a couple of useful buttons:
 
 ### Auto execute code on startup
 
-Custom starter code can automatically be executed on startup:
+Custom starter code can automatically be executed on startup and shown as the first cell using the `code` parameter:
 
 ```html
 <iframe src="https://replite.vercel.app/retro/consoles?kernel=python&code=import numpy as np" width="100%" height="100%">
@@ -47,6 +47,13 @@ Custom starter code can automatically be executed on startup:
 ```
 
 https://user-images.githubusercontent.com/591645/152204519-7980e9f6-ef56-4263-bb79-4fcf3e4fd2be.mp4
+
+or starter code can be silently pre-run with the `prerun` parameter:
+
+```html
+<iframe src="https://replite.vercel.app/retro/consoles?kernel=python&prerun=import micropip%0Aawait micropip.install('xarray')&code=import xarray as xr" width="100%" height="100%">
+</iframe>
+```
 
 ### Themes
 
