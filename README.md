@@ -9,7 +9,7 @@ An embeddable REPL, powered by JupyterLite.
 To embed the code console in your website:
 
 ```html
-<iframe src="https://replite.vercel.app/retro/consoles/index.html" width="100%" height="100%">
+<iframe src="https://replite.vercel.app/repl/index.html" width="100%" height="100%">
 </iframe>
 ```
 
@@ -22,7 +22,7 @@ The behavior and the look of the REPL can be configured via URL parameters.
 To avoid the kernel selection dialog and choose a given kernel by default:
 
 ```html
-<iframe src="https://replite.vercel.app/retro/consoles?kernel=python" width="100%" height="100%">
+<iframe src="https://replite.vercel.app/repl?kernel=python" width="100%" height="100%">
 </iframe>
 ```
 
@@ -31,7 +31,7 @@ To avoid the kernel selection dialog and choose a given kernel by default:
 The toolbar can be enabled (opt-in) to add a couple of useful buttons:
 
 ```html
-<iframe src="https://replite.vercel.app/retro/consoles?toolbar=1" width="100%" height="100%">
+<iframe src="https://replite.vercel.app/repl?toolbar=1" width="100%" height="100%">
 </iframe>
 ```
 
@@ -42,7 +42,7 @@ The toolbar can be enabled (opt-in) to add a couple of useful buttons:
 Custom starter code can automatically be executed on startup:
 
 ```html
-<iframe src="https://replite.vercel.app/retro/consoles?kernel=python&code=import numpy as np" width="100%" height="100%">
+<iframe src="https://replite.vercel.app/repl?kernel=python&code=import numpy as np" width="100%" height="100%">
 </iframe>
 ```
 
@@ -53,7 +53,7 @@ https://user-images.githubusercontent.com/591645/152204519-7980e9f6-ef56-4263-bb
 It is also possible to select a theme, for example `JupyterLab Dark`:
 
 ```html
-<iframe src="https://replite.vercel.app/retro/consoles?theme=JupyterLab Dark" width="100%" height="100%">
+<iframe src="https://replite.vercel.app/repl?theme=JupyterLab Dark" width="100%" height="100%">
 </iframe>
 ```
 
@@ -68,23 +68,3 @@ https://user-images.githubusercontent.com/591645/152374795-7b415c03-2f7b-43a1-95
 ## Create your custom deployment
 
 TBD
-
-## Development
-
-```bash
-# create a new environment
-mamba create -n replite -c conda-forge jupyterlab=3 jupyter-packaging python nodejs -y
-conda activate replite
-
-# Install JupyterLite
-python -m pip install jupyterlite
-
-# Install package in development mode
-python -m pip install -e .
-
-# Link your development version of the extension
-jupyter labextension develop . --overwrite
-
-# Rebuild extension TypeScript source after making changes
-jlpm run build
-```

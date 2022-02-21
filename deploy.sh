@@ -29,7 +29,3 @@ export LITE_OUTPUT_DIR=_output
 jupyter lite --version
 jupyter lite build --contents contents --output-dir ${LITE_OUTPUT_DIR}
 
-# copy custom files to avoid 404s
-cp favicon.ico ${LITE_OUTPUT_DIR}
-cp jupyter-lite.ipynb ${LITE_OUTPUT_DIR}/retro
-cp jupyter-lite.ipynb ${LITE_OUTPUT_DIR}/retro/consoles
