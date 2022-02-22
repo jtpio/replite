@@ -1,6 +1,6 @@
 ipywidgets~=7.6
 jupyterlab~=3.2.9
-jupyterlite==0.1.0a24
+jupyterlite==0.1.0b0
 jupyterlab-fasta>=3,<4
 jupyterlab-geojson>=3,<4
 plotly>=5,<6
