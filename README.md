@@ -1,5 +1,13 @@
 # replite
 
+## ⚠️ Archived ⚠️
+
+[JupyterLite](https://jupyterlite.readthedocs.io/en/latest/) now includes a REPL application by default.
+
+Check out the documentation to learn how to use it and configure it: https://jupyterlite.readthedocs.io/en/latest/quickstart/embed-repl.html
+
+---
+
 An embeddable REPL, powered by JupyterLite.
 
 ![replite-numpy](https://user-images.githubusercontent.com/591645/151983925-6e5dcc1e-b9be-4f1a-91bc-330579103e78.png)
